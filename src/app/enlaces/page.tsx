@@ -1,6 +1,6 @@
 // src/app/page.tsx
+import LinktreeButton from "@/components/LinktreeButton";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function EnlacesPage() {
   return (
@@ -30,33 +30,20 @@ export default function EnlacesPage() {
 
           {/* Enlaces principales */}
           <div className="space-y-4 mt-6">
-            <LinkButton href="/projects" label="PROYECTOS" />
-            <LinkButton href="/projects" label="NOSOTROS" />
-            <LinkButton
-              href="https://wa.me/573106897387?text=Hola%20sapa"
+            <LinktreeButton url="/projects" label="PROYECTOS" />
+            <LinktreeButton url="/projects" label="NOSOTROS" />
+            <LinktreeButton
+              url="https://wa.me/573106897387?text=Hola%20sapa"
               label="WHATSAPP"
             />
           </div>
 
           {/* Enlace adicional */}
           <div className="mt-8 bg-black/10 p-3 rounded-lg border  border-white/20">
-            <LinkButton href="/" label="HOME" />
+            <LinktreeButton url="/" label="HOME" />
           </div>
         </div>
       </div>
     </main>
-  );
-}
-
-function LinkButton({ href, label }: { href: string; label: string }) {
-  return (
-    <Link
-      href={href}
-      className="block w-full bg-white/30 hover:bg-white/30 transition text-white px-4 py-3 rounded-lg font-semibold tracking-wide text-sm text-center "
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {label}
-    </Link>
   );
 }
