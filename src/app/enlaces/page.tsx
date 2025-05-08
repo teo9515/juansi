@@ -23,24 +23,24 @@ export default function EnlacesPage() {
           </div>
 
           {/* Nombre y descripción */}
-          <h1 className="text-2xl font-semibold mt-2 tracking-wide">
+          <h1 className="text-2xl font-semibold mt-2 tracking-widest">
             Simetría Studio
           </h1>
-          <p className="text-md text-white/70 tracking-wide">Arquitectura</p>
+          <p className="text-md text-white/70 tracking-widest">Arquitectura</p>
 
           {/* Enlaces principales */}
           <div className="space-y-4 mt-6">
-            <LinktreeButton url="/projects" label="PROYECTOS" />
-            <LinktreeButton url="/projects" label="NOSOTROS" />
+            <LinktreeButton url="/" label="Proyectos" />
+            <LinktreeButton url="/nosotros" label="Nosotros" />
             <LinktreeButton
               url="https://wa.me/573106897387?text=Hola%20sapa"
-              label="WHATSAPP"
+              label="Whatsapp"
             />
           </div>
 
           {/* Enlace adicional */}
           <div className="mt-8 bg-black/10 p-3 rounded-lg border  border-white/20">
-            <LinktreeButton url="/" label="HOME" />
+            <LinktreeButton url="/" label="Home" />
           </div>
         </div>
       </div>

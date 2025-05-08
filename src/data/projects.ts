@@ -71,5 +71,6 @@ export type Project = {
       images: ["/24.jpg", "/24.jpg", "/4.jpg", "/20.jpg", "/21.jpg", "/22.jpg", "/23.jpg", "/24.jpg"],
       type: "Renacentista"
     },
+    
   ];
   

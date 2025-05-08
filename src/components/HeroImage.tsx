@@ -17,7 +17,7 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden saturate-70">
       {images.map((src, index) => (
         <div
           key={src}
@@ -33,7 +33,7 @@ const ImageSlider = () => {
             priority={index === 0}
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h1 className="text-white text-4xl md:text-5xl xl:text-6xl font-bold text-center w-11/12">
+            <h1 className="text-white text-4xl md:text-4xl tracking-widest font-semibol text-center w-11/12">
               Diseño que trasciende el tiempo
             </h1>
           </div>

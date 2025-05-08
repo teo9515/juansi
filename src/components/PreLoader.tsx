@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const text = "Simetría Studio";
+const text = "Simetria Studio";
 
 const containerVariants = {
   initial: {},
@@ -50,7 +50,7 @@ const Preloader = () => {
             animate="animate"
             exit={{ opacity: 0, scale: 1.1 }}
             transition={{ duration: 1 }}
-            className="text-2xl md:text-6xl font-bold flex space-x-1"
+            className="text-2xl md:text-6xl font-bold flex space-x-1 tracking-widest"
           >
             {text.split("").map((char, index) => (
               <motion.span key={index} variants={letterVariants}>

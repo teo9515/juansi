@@ -31,7 +31,7 @@ export default function ProjectClient({ project }: Props) {
       {/* Botón volver */}
       <div className="w-full max-w-6xl">
         <Link
-          href="/projects"
+          href="/"
           className="inline-flex items-center gap-2 text-gray-700 hover:text-black transition-all text-sm uppercase tracking-widest"
         >
           <FaArrowLeft className="w-4 h-4" />
@@ -84,16 +84,18 @@ export default function ProjectClient({ project }: Props) {
         {/* Información del proyecto */}
         <div className="space-y-6 text-left">
           <div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+            <h1 className="text-2xl sm:text-3xl md:text-2xl font-semibold tracking-widest">
               {project.name}
             </h1>
             {project.type && (
-              <p className="text-md text-gray-500 mt-2 uppercase tracking-wide">
+              <p className="text-sm text-gray-500 mt-2 uppercase tracking-widest">
                 {project.type}
               </p>
             )}
           </div>
-          <p className="text-lg text-gray-700">{project.description}</p>
+          <p className="text-lg text-gray-700 tracking-wider">
+            {project.description}
+          </p>
         </div>
       </div>
     </main>

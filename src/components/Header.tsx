@@ -1,32 +1,69 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+type HeaderProps = {
+  scrollToProjects: () => void;
+};
 
+const Header = ({ scrollToProjects }: HeaderProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const handleClickProjects = () => {
+    scrollToProjects();
+    if (isOpen) toggleMenu();
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="w-full px-6 md:px-[50px] bg-transparent py-6 flex justify-between items-center absolute top-0 left-0 z-50">
-      <h1 className="text-3xl md:text-4xl font-bold text-white">
-        Simetría Studio
+    <header
+      className={`w-full px-6 md:px-[50px] py-6 flex justify-between items-center fixed top-0 left-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-[#F7F6F2] " : "bg-transparent"
+      }`}
+    >
+      <h1
+        className={`text-2xl md:text-3xl font-semibold tracking-widest ${
+          scrolled ? "text-gray-800" : "text-[#F7F6F2]"
+        }`}
+      >
+        Simetria Studio
       </h1>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex space-x-5 lg:space-x-10 text-white font-semibold items-center">
-        <Link
-          href="/projects"
-          className="text-[18px] lg:text-[22px] hover:opacity-80"
+      <nav className="hidden md:flex space-x-5 lg:space-x-10 font-normal items-center">
+        <button
+          onClick={handleClickProjects}
+          className={`text-[18px] lg:text-[18px] cursor-pointer hover:opacity-80 tracking-widest ${
+            scrolled ? "text-gray-800" : "text-[#F7F6F2]"
+          }`}
         >
           Proyectos
-        </Link>
+        </button>
         <Link
-          href="/projects"
-          className="text-[18px] lg:text-[22px] hover:opacity-80"
+          href="/nosotros"
+          className={`text-[18px] lg:text-[18px] hover:opacity-80 tracking-widest ${
+            scrolled ? "text-gray-800" : "text-[#F7F6F2]"
+          }`}
         >
           Nosotros
         </Link>
@@ -34,10 +71,18 @@ const Header = () => {
           href="https://wa.me/573005306054?text=Hola%20sapa"
           target="_blank"
         >
-          <FaWhatsapp className="text-white hover:text-green-400 text-[30px] transition-colors duration-300" />
+          <FaWhatsapp
+            className={`text-[24px] transition-colors duration-300 ${
+              scrolled ? "text-black" : "text-white hover:text-white/60"
+            }`}
+          />
         </Link>
         <Link href="https://www.instagram.com/simonsp_8/" target="_blank">
-          <FiInstagram className="text-white hover:text-pink-500 text-[30px] transition-colors duration-300" />
+          <FiInstagram
+            className={`text-[24px] transition-colors duration-300 ${
+              scrolled ? "text-black" : "text-white hover:text-white/60"
+            }`}
+          />
         </Link>
       </nav>
 
@@ -52,18 +97,17 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-[80px] left-0 w-full  text-white flex flex-col items-center space-y-6 py-6 md:hidden transition-all duration-300 z-40">
-          <div className="w-11/12 grid grid-cols-1 h-[220px] rounded-lg justify-self-center justify-items-center bg-black opacity-85 gap-3">
-            <Link
-              href="/projects"
-              className="text-[22px] flex  items-center"
-              onClick={toggleMenu}
+        <div className="absolute top-[80px] left-0 w-full text-white flex flex-col items-center space-y-6 py-6 md:hidden transition-all duration-300 z-40 bg-black/80">
+          <div className="w-11/12 grid grid-cols-1 h-[220px] rounded-lg justify-self-center justify-items-center gap-3">
+            <button
+              onClick={handleClickProjects}
+              className="text-[22px] flex items-center"
             >
               Proyectos
-            </Link>
+            </button>
             <Link
-              href="/projects"
-              className="text-[22px] flex  items-center"
+              href="/nosotros"
+              className="text-[22px] flex items-center"
               onClick={toggleMenu}
             >
               Nosotros
@@ -73,7 +117,7 @@ const Header = () => {
               target="_blank"
               onClick={toggleMenu}
             >
-              <FaWhatsapp className="text-white hover:text-green-400 text-[30px] " />
+              <FaWhatsapp className="text-white hover:text-green-400 text-[30px]" />
             </Link>
             <Link
               href="https://www.instagram.com/simonsp_8/"
