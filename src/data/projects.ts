@@ -71,6 +71,41 @@ export type Project = {
       images: ["/24.jpg", "/24.jpg", "/4.jpg", "/20.jpg", "/21.jpg", "/22.jpg", "/23.jpg", "/24.jpg"],
       type: "Renacentista"
     },
-    
+     {
+      id: "casa-del-lago-x",
+      name: "Casa del Lago",
+      description: "Residencial Tipología Madera, Metal, Vidrio, Piedra sinterizada, STO, pintura, telas.Materiales Proyecto residencial de un Pent-house en Medellín que sea un hogar para su residente. El proyecto es un pedido llave en mano incluyendo re una remodelación física y técnica total de apartamento.Nuestro deseo fue crear una obra que se preservara en el tiempo, desde sus muebles, acabados y detalles se busca la funcionalidad y la estética convivan junto a este concepto de hogar contemporáneo. La iluminación juega un papel fundamental para lograr esto. Los muebles e iluminación fueron importados por nosotros, así como la logística y dirección y control del recurso del cliente.",
+      images: ["/3.jpg", "/4.jpg", "/20.jpg", "/21.jpg", "/22.jpg", "/23.jpg", "/24.jpg"],
+      
+      type: "Clásica"
+    },
+    {
+      id: "oficinas-urbanasx",
+      name: "Oficinas Urbanas",
+      description: "Diseño contemporáneo para espacios de trabajo colaborativo en el centro de la ciudad.",
+      images: ["/21.jpg", "/22.jpg", "/4.jpg", "/20.jpg", "/21.jpg", "/22.jpg", "/23.jpg", "/24.jpg"],
+      type: "Gótica"
+    },
+    {
+      id: "residencia-viejax",
+      name: "Residencia Moderna",
+      description: "Arquitectura minimalista y elegante para una vivienda de lujo.",
+      images: ["/23.jpg", "/24.jpg", "/4.jpg", "/20.jpg", "/21.jpg", "/22.jpg", "/23.jpg", "/24.jpg"],
+      type: "Renacentista"
+    }, {
+      id: "casa-del-lagoy",
+      name: "Casa del Lago",
+      description: "Residencial Tipología Madera, Metal, Vidrio, Piedra sinterizada, STO, pintura, telas.Materiales Proyecto residencial de un Pent-house en Medellín que sea un hogar para su residente. El proyecto es un pedido llave en mano incluyendo re una remodelación física y técnica total de apartamento.Nuestro deseo fue crear una obra que se preservara en el tiempo, desde sus muebles, acabados y detalles se busca la funcionalidad y la estética convivan junto a este concepto de hogar contemporáneo. La iluminación juega un papel fundamental para lograr esto. Los muebles e iluminación fueron importados por nosotros, así como la logística y dirección y control del recurso del cliente.",
+      images: ["/3.jpg", "/4.jpg", "/20.jpg", "/21.jpg", "/22.jpg", "/23.jpg", "/24.jpg"],
+      
+      type: "Clásica"
+    },
+    {
+      id: "oficinas-urbanasy",
+      name: "Oficinas Urbanas",
+      description: "Diseño contemporáneo para espacios de trabajo colaborativo en el centro de la ciudad.",
+      images: ["/21.jpg", "/22.jpg", "/4.jpg", "/20.jpg", "/21.jpg", "/22.jpg", "/23.jpg", "/24.jpg"],
+      type: "Gótica"
+    },    
   ];
   
