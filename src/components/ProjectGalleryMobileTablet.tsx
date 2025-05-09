@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 
 const ProjectGalleryMobileTablet: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 w-11/12 sm:w-full justify-self-center gap-6 py-4 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 w-11/12 sm:w-full justify-self-center gap-y-6 sm:gap-y-0 sm:gap-6 py-4 ">
       {projects.map((project) => (
         <div key={project.id} className="flex flex-col overflow-hidden">
           <Link
