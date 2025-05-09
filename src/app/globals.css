@@ -2,6 +2,7 @@
 
 body {
     @apply bg-[#F7F6F2];
+     user-select: none;
   }
 
  
